@@ -1,13 +1,21 @@
-import './assets/css/App.css'
-import Home from './pages/Home'
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/layouts/Layout';
+import Home from './pages/Home';
+import Analytics from './pages/Analytics';
+import Food from './pages/menu/Food';
+import Drinks from './pages/menu/Drinks';
+import Staff from './pages/Staff'
 
-function App() {
+export default function App() {
   return (
-   <>
-   <h1 className='p-4 w-full bg-blue-800 text-white'>Welcome to React!</h1>
-   <Home/>
-   </>
-  )
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/staff" element={<Staff />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/menu/food" element={<Food />} />
+        <Route path="/menu/drinks" element={<Drinks />} />
+      </Route>
+    </Routes>
+  );
 }
-
-export default App

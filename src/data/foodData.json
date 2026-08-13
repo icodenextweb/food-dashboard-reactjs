@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Spicy Chicken Pizza",
+    "category": "Food",
+    "price": 450,
+    "rating": 4.8,
+    "status": "Preparing",
+    "ordersCount": 1240,
+    "isAvailable": true
+  },
+  {
+    "id": 2,
+    "name": "Veg Supreme Burger",
+    "category": "Food",
+    "price": 250,
+    "rating": 4.5,
+    "status": "Ready",
+    "ordersCount": 980,
+    "isAvailable": true
+  },
+  {
+    "id": 3,
+    "name": "Cold Caramel Coffee",
+    "category": "Beverage",
+    "price": 180,
+    "rating": 4.6,
+    "status": "Delivered",
+    "ordersCount": 850,
+    "isAvailable": true
+  },
+  {
+    "id": 4,
+    "name": "Peri Peri French Fries",
+    "category": "Snacks",
+    "price": 150,
+    "rating": 4.2,
+    "status": "Preparing",
+    "ordersCount": 620,
+    "isAvailable": true
+  },
+  {
+    "id": 5,
+    "name": "Chocolate Lava Cake",
+    "category": "Desserts",
+    "price": 220,
+    "rating": 4.9,
+    "status": "Cancelled",
+    "ordersCount": 750,
+    "isAvailable": false
+  },
+  {
+    "id": 6,
+    "name": "Fresh Lime Soda",
+    "category": "Beverage",
+    "price": 110,
+    "rating": 4.1,
+    "status": "Delivered",
+    "ordersCount": 410,
+    "isAvailable": true
+  },
+  {
+    "id": 7,
+    "name": "Paneer Tikka Wrap",
+    "category": "Food",
+    "price": 200,
+    "rating": 4.4,
+    "status": "Preparing",
+    "ordersCount": 530,
+    "isAvailable": true
+  },
+  {
+    "id": 8,
+    "name": "Garlic Breadsticks",
+    "category": "Snacks",
+    "price": 160,
+    "rating": 4.3,
+    "status": "Cancelled",
+    "ordersCount": 310,
+    "isAvailable": false
+  }
+]
