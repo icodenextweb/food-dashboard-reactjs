@@ -6,10 +6,9 @@ export default function Layout() {
     <div style={{ display: 'flex', minHeight: '100vh' }}>
       <Sidebar />
 
-      <main style={{ flex: 1, padding: '0rem' }}>
+      <main style={{flex:1,padding: '0rem' }}>
         <Outlet />
       </main>
-    
     </div>
   );
 }

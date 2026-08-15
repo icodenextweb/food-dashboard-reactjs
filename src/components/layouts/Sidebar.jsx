@@ -5,7 +5,6 @@ import { User, Info, Briefcase,UtensilsCrossed , ChevronDown, ChevronRight } fro
 export default function Sidebar() {
   const [MenuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-
  //check route
   const isMenuActive = location.pathname.startsWith('/menu');
 
