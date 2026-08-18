@@ -14,7 +14,6 @@ export default function Sidebar() {
     }
   }, [isMenuActive]);
 
-  // Active link styling
   const getLinkClass = ({ isActive }) =>
     `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
       isActive

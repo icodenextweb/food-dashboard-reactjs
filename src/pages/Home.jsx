@@ -1,26 +1,31 @@
 import React, { useState } from "react";
 import MetricsBar from "../features/MetricsBar";
 import StatusBar from "../features/StatusBar";
-import { useLiveMetrics } from "../hooks/useLiveMetrics"; 
-import { useLiveStatus } from "../hooks/useLiveStatus";
+import useLiveAnalytics from "../hooks/useLiveAnalytics";
+import Button from "../components/ui/Button";
 
 
 export default function Home() {
-    const [isLive, setIsLive] = useState(false); 
-    const metrics = useLiveMetrics(isLive);    
-    const status = useLiveStatus();
-
+      const { 
+        stats, 
+        totalRevenue, 
+        totalOrders, 
+        cancelledOrdersCount,
+        averageRatings
+      } = useLiveAnalytics();
+    
     return (
-        <div className="p-4">
-            <button 
-                onClick={() => setIsLive((fn) => !fn)}
-                className="px-4 py-2 bg-rose-500 text-white rounded mb-4"
-            >
-                {isLive ? "Pause Live Updates" : "Start Live Updates"}
-            </button>
+        <div className="p-4 flex flex-col gap-4">
+            <Button btnStyle="p-4 bg-rose-400 text-white w-[140px] rounded-lg" btnText="Live Status"/>
+            <MetricsBar getMetricsData={{
+                totalOrders,
+                totalRevenue,
+                cancelledOrdersCount,
+                averageRatings
+            }} /> 
 
-            <MetricsBar getMetricsData={metrics} /> 
-            <StatusBar getStatusData = {status}/>
+            <StatusBar getStatusData={stats}/>
+           
         </div>
     );
 }

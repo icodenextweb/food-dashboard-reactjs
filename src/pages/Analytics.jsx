@@ -1,7 +1,6 @@
-export default function About() {
-  return (
-    <div className="p-4 h-full">
-     <h1>Analytics </h1>
-    </div>
-  );
+import React from "react";
+
+
+export default function Analytics() {
+  return <h1>Analytics</h1>
 }
