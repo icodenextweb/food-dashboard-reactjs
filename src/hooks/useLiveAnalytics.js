@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
 import useLiveStatus from "./useLiveStatus";
 
-export default function useLiveAnalytics() {
-  const stats = useLiveStatus();
+export default function useLiveAnalytics(isLive) {
+  const stats = useLiveStatus(isLive);
 
   const totalRevenue = stats.reduce((acc, item) => {
     if (item.status === "Delivered") {
       return acc + (item.price || 0);
-    }else if(item.status === "Cancelled"){
-      return acc - (item.price|| 0);
+    } else if (item.status === "Cancelled") {
+      return acc - (item.price || 0);
     }
     return acc;
   }, 0);
+  
   const totalOrders = stats.length;
 
   const preparingOrdersCount = stats.filter(
@@ -29,6 +29,7 @@ export default function useLiveAnalytics() {
   const cancelledOrdersCount = stats.filter(
     (item) => item.status === "Cancelled"
   ).length;
+  
   const totalRatingSum = stats.reduce((acc, item) => acc + (item.rating || 0), 0);
   const averageRatings = stats.length > 0 ? (totalRatingSum / stats.length).toFixed(1) : 0;
 

@@ -6,17 +6,22 @@ import Button from "../components/ui/Button";
 
 
 export default function Home() {
+    const[isLive,setIsLive] = useState(false);
       const { 
         stats, 
         totalRevenue, 
         totalOrders, 
         cancelledOrdersCount,
         averageRatings
-      } = useLiveAnalytics();
+      } = useLiveAnalytics(isLive);
     
     return (
         <div className="p-4 flex flex-col gap-4">
-            <Button btnStyle="p-4 bg-rose-400 text-white w-[140px] rounded-lg" btnText="Live Status"/>
+              <Button 
+                setBtnFn={() => setIsLive((prev) => !prev)} 
+                btnStyle={`p-2 text-white w-[120px] rounded-full transition-colors ${isLive ? "bg-rose-500" : "bg-green-500"}`} 
+                btnText={isLive ? "Stop Live" : "Go Live"}
+            />
             <MetricsBar getMetricsData={{
                 totalOrders,
                 totalRevenue,
