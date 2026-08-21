@@ -1,7 +1,15 @@
-export default function Food() {
+import React from "react";
+import foodData from "../../data/foodData.json";
+import InventoryManager from "../../features/InventoryManager";
+
+export default function FoodInventory() {
   return (
-    <div className="p-4 ">
-     <h1>Food Inventory</h1>
-    </div>
+    <InventoryManager 
+      title="🍕 Food Inventory" 
+      storageKey="foodStockData" 
+      initialData={foodData} 
+      defaultCategory="General" 
+      defaultUnit="pcs" 
+    />
   );
 }

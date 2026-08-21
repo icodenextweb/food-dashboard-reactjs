@@ -19,14 +19,23 @@ export default function useLiveStatus(isLive) {
     if (!isLive) {
       return;
     }
-    const addItemInterval = setInterval(() => {
+   const addItemInterval = setInterval(() => {
       setStats((prevStats) => {
-        if (prevStats.length >= 50) {
-          return prevStats; 
+        if (prevStats.length >= 50) return prevStats; 
+        
+        const foodStock = JSON.parse(localStorage.getItem("foodStockData")) || [];
+        const drinksStock = JSON.parse(localStorage.getItem("drinksStockData")) || [];
+        
+     
+        let combinedInventory = [...foodStock, ...drinksStock];
+
+        if (combinedInventory.length === 0) {
+            combinedInventory = foodData;
         }
-        const randomIndex = Math.floor(Math.random() * foodData.length);
+
+        const randomIndex = Math.floor(Math.random() * combinedInventory.length);
         const newItem = {
-          ...foodData[randomIndex],
+          ...combinedInventory[randomIndex],
           status: "Preparing" 
         };
         return [newItem, ...prevStats];

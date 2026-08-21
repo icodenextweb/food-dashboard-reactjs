@@ -22,7 +22,7 @@
   {
     "id": 3,
     "name": "Cold Caramel Coffee",
-    "category": "Beverage",
+    "category": "Drinks",
     "price": 180,
     "rating": 4.6,
     "status": "Delivered",
@@ -74,6 +74,8 @@
     "name": "Garlic Breadsticks",
     "category": "Snacks",
     "price": 160,
+    "qty":10,
+    "unit":"pcs",
     "rating": 4.3,
     "status": "Cancelled",
     "ordersCount": 310,
